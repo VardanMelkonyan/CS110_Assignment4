@@ -84,12 +84,14 @@ function nearestPowTwo(n) {
     return power;
 }
 
-function reshape(matrix, size) {
-    matrix = matrix.slice(0, size );
-    for (let i = 0; i < matrix.length; i++) {
-        matrix[i] = matrix[i].slice(0, size);
+function reshape(mat, size) {
+    for (let i = mat.length -1; size <= i; i--) {
+        mat.pop()
     }
-    return matrix;
+    for (let i = 0; i < mat.length; i++){
+        mat[i].pop();
+    }
+    return mat;
 }
 
 function matrixProduct(mat1, mat2) {
